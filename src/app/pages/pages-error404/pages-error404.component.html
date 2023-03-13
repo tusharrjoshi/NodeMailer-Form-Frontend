@@ -1,0 +1,81 @@
+<main>
+   <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">
+      <div class="col-lg-6">
+         <div class="card">
+            <div class="pt-4 pb-2">
+               <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+               <p class="text-center small">Enter your username & password to login</p>
+            </div>
+            <div class="card-body">
+               <form [formGroup]="dataForm">
+                  <div class="row mb-3">
+                     <div class="col-sm-10">
+                        <div class="form-floating mb-3"> <input formControlName="name" type="text" class="form-control"
+                              id="floatingInput" placeholder="Jhon Doe"> <label for="floatingInput">Name</label>
+                        </div>
+                        <div class="text text-danger mb-2" *ngIf="dataForm.controls['name'].touched && dataForm.controls['name'].errors?.['required']">
+                           <sup>*</sup>Name is required
+                        </div>
+                        <div class="form-floating mb-3"> <input type="date" formControlName="dob" class="form-control"
+                              id="floatingInput" placeholder="Jhon Doe"> <label for="floatingInput">Date Of
+                              Birth</label>
+                        </div>
+                        <div class="text text-danger mb-2" *ngIf="dataForm.controls['dob'].touched && dataForm.controls['dob'].errors?.['tooJung']">
+                           <sup>*</sup>Minimum age should be 18 years.
+                        </div>
+                        <div class="text text-danger mb-2" *ngIf="dataForm.controls['dob'].touched && dataForm.controls['dob'].errors?.['required']">
+                           <sup>*</sup>Date Of Birth is required
+                        </div>
+                        <div class="form-floating mb-3"> <input formControlName="email" type="email"
+                              class="form-control" id="floatingInput" placeholder="name@example.com"> <label
+                              for="floatingInput">Email address</label>
+                        </div>
+                        <div class="text text-danger mb-2" *ngIf="dataForm.controls['email'].touched && dataForm.controls['email'].errors?.['required']">
+                           <sup>*</sup>Email is required
+                        </div>
+                        <div class="text text-danger mb-2" *ngIf="dataForm.controls['email'].touched && dataForm.controls['email'].errors?.['email']">
+                           <sup>*</sup>Enter Valid Email
+                        </div>
+                        <div class="form-floating mb-3"> <input formControlName="mobile" type="text" class="form-control"
+                           id="floatingInput" placeholder="9873203823"> <label for="floatingInput">Phone</label>
+                     </div>
+                        <div class="text text-danger mb-2" *ngIf="dataForm.controls['mobile'].touched && dataForm.controls['mobile'].errors?.['required']">
+                           <sup>*</sup>Phone number is required
+                        </div>
+                        <div class="row mb-3">
+                           <div class="col-sm-10"> <button [disabled]="!dataForm.valid" (click)="submit()" type="submit" class="btn btn-primary">Submit Form</button></div>
+                        </div>
+
+                     </div>
+                  </div>
+                  <!-- <div class="row mb-5">
+                     <label class="col-sm-2 col-form-label">Input groups</label>
+                     <div class="col-sm-10">
+                        <div class="input-group mb-3"> <span class="input-group-text" id="basic-addon1">@</span>
+                           <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                              aria-describedby="basic-addon1">
+                        </div>
+                        <div class="input-group mb-3"> <input type="text" class="form-control"
+                              placeholder="Recipient's username" aria-label="Recipient's username"
+                              aria-describedby="basic-addon2"> <span class="input-group-text"
+                              id="basic-addon2">@example.com</span></div>
+                        <label for="basic-url" class="form-label">Your vanity URL</label>
+                        <div class="input-group mb-3"> <span class="input-group-text"
+                              id="basic-addon3">https://example.com/users/</span> <input type="text"
+                              class="form-control" id="basic-url" aria-describedby="basic-addon3"></div>
+                        <div class="input-group mb-3"> <span class="input-group-text">$</span> <input type="text"
+                              class="form-control" aria-label="Amount (to the nearest dollar)"> <span
+                              class="input-group-text">.00</span></div>
+                        <div class="input-group mb-3"> <input type="text" class="form-control" placeholder="Username"
+                              aria-label="Username"> <span class="input-group-text">@</span> <input type="text"
+                              class="form-control" placeholder="Server" aria-label="Server"></div>
+                        <div class="input-group"> <span class="input-group-text">With textarea</span><textarea
+                              class="form-control" aria-label="With textarea"></textarea></div>
+                     </div>
+                  </div> -->
+               </form>
+            </div>
+         </div>
+      </div>
+   </section>
+</main>

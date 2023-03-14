@@ -34,6 +34,7 @@ import { IconsBoxiconsComponent } from './components/icons-boxicons/icons-boxico
 
 import { PagesError404Component } from './pages/pages-error404/pages-error404.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 
 @NgModule({
@@ -73,7 +74,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

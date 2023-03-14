@@ -1,4 +1,5 @@
 import { Component, OnInit, ElementRef } from '@angular/core';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,15 +7,13 @@ import { Component, OnInit, ElementRef } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor(private elementRef: ElementRef) { }
+  dataList:any;
+  constructor(private elementRef: ElementRef,private api:ApiService) { }
 
   ngOnInit(): void {
-
-    var s = document.createElement("script");
-    s.type = "text/javascript";
-    s.src = "../assets/js/main.js";
-    this.elementRef.nativeElement.appendChild(s);
+    this.api.getData().then((res:any)=>{
+      this.dataList = res.data;
+    })
   }
 
 }
